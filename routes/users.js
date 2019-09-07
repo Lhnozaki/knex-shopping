@@ -52,7 +52,6 @@ router.post("/register", (req, res) => {
   let newEmail = req.body.email;
   let newPW = req.body.password;
   let errorMessage;
-  console.log(newEmail);
   db.raw(`SELECT * FROM "Users" WHERE email = ?`, [newEmail])
     .then(results => {
       if (results.rows.length > 0) {
